@@ -60,3 +60,6 @@ body[data-stage=start] .start-const,body[data-stage=start] .start-spark{display:
 @keyframes start-buddy-glow{from{opacity:.78}to{opacity:1}}
 @keyframes start-twinkle{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.15)}}
 @media(prefers-reduced-motion:reduce){body[data-stage=start] .mystery-buddy,.start-const circle,.start-spark{animation:none}}
+/* Constellation stars only twinkle in place: SVG scale moved the circles around the viewBox origin (Claude 17:05). */
+.start-const circle{animation-name:start-glint}
+@keyframes start-glint{from{opacity:.35}to{opacity:1}}
