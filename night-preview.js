@@ -25,3 +25,25 @@ stage.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;
 function release(){drag=null;stage.classList.remove('dragging');}stage.addEventListener('pointerup',release);stage.addEventListener('pointercancel',release);stage.addEventListener('lostpointercapture',release);
 stage.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();rotation+=e.key==='ArrowRight'?15:-15;update();}});
 })();
+
+// Start screen sparkle: a constellation outside each buddy and four-point stars kept off the text column.
+(()=>{
+const D=window.PREVIEW_DATA,root=document.querySelector('#tarot-experience'),stage=root.querySelector('.orbit-stage'),cards=[...stage.querySelectorAll('.orbit-card')];
+const colors=['#ffffff','#ffd1ec','#e7d6ff','#fff0c9'];
+function build(){
+ root.querySelectorAll('.start-const,.start-spark').forEach(el=>el.remove());
+ const mobile=innerWidth<600,w=mobile?60:100,h=w/2,k=mobile?1.55:1.5;
+ cards.forEach((card,i)=>{const z=D.zodiac[i%12],p=D.patterns[z.id];if(!p)return;const x=parseFloat(card.style.getPropertyValue('--x'))||0,y=parseFloat(card.style.getPropertyValue('--y'))||0,pt=p.points400x200;
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','start-const');svg.setAttribute('viewBox','-20 -20 440 240');svg.setAttribute('width',w);svg.setAttribute('height',h);svg.setAttribute('aria-hidden','true');svg.style.transform=`translate(-50%,-50%) translate(${x*k}px,${y*k}px)`;
+  svg.innerHTML=p.paths.map(path=>`<path d="M${path.map(id=>pt[id].join(' ')).join('L')}"/>`).join('')+Object.values(pt).map(([a,b],j)=>`<circle cx="${a}" cy="${b}" r="${j%3?8:12}" style="animation-delay:${-((i*.37+j*.53)%2.6)}s"/>`).join('');
+  stage.append(svg);});
+ let seed=11;const rnd=()=>{seed=seed*16807%2147483647;return seed/2147483647;};
+ const rr=root.getBoundingClientRect(),sr=stage.getBoundingClientRect(),top=sr.top-rr.top-20,bottom=sr.bottom-rr.top;
+ for(let i=0;i<46;i++){let x,y;do{x=rnd();y=rnd();}while((y*rr.height<top||y*rr.height>bottom)&&x>.15&&x<.85);
+  const s=document.createElement('i');s.className='start-spark';s.setAttribute('aria-hidden','true');s.style.left=x*100+'%';s.style.top=y*100+'%';
+  s.style.setProperty('--s',8+i*7%10+'px');s.style.setProperty('--c',colors[i%4]);s.style.setProperty('--d',1.8+rnd()*2.6+'s');s.style.setProperty('--dl',-rnd()*3+'s');root.append(s);}
+}
+let timer;const rebuild=()=>{clearTimeout(timer);timer=setTimeout(build,150);};
+new MutationObserver(rebuild).observe(cards[0],{attributes:true,attributeFilter:['style']});
+addEventListener('resize',rebuild);build();
+})();

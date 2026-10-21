@@ -45,3 +45,18 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;background-ima
 .orbit-stage{height:700px}@media(max-width:600px){.orbit-stage{height:450px}#tarot-experience .sun{left:calc(50% - 117px);top:calc(50% - 117px)}}
 
 body[data-stage=browse] .mystery-buddy,body[data-stage=browse] .mystery-mark{display:none}body[data-stage=result] #flip-hint{color:#c8c4de}body[data-stage=result] .review-settings[hidden]{display:none}
+
+/* Start screen: mysterious, sparkly constellation ring (Claude 16:45, confirmed mockup). Start stage only. */
+body[data-stage=start] #tarot-experience{background:radial-gradient(ellipse 55% 30% at 25% 50%,#f5a3d42e,transparent 70%),radial-gradient(ellipse 50% 30% at 78% 58%,#b7a0ff30,transparent 70%),radial-gradient(ellipse 70% 35% at 50% 52%,#ffd0ec14,transparent 70%)}
+body[data-stage=start] .orbit-card canvas{opacity:0}
+body[data-stage=start] .orbit-card{filter:none}
+body[data-stage=start] .mystery-buddy{left:4%;top:14%;width:92%;height:72%;opacity:1;filter:brightness(0) drop-shadow(0 0 1.5px #ffe3f4) drop-shadow(0 0 7px #f3a6dacc) drop-shadow(0 0 16px #b79cff88);animation:start-buddy-glow 3.2s ease-in-out infinite alternate}
+.start-const,.start-spark{display:none;position:absolute;pointer-events:none}
+body[data-stage=start] .start-const,body[data-stage=start] .start-spark{display:block}
+.start-const{left:50%;top:50%;overflow:visible}
+.start-const path{fill:none;stroke:#ffe6fa;stroke-width:4;opacity:.75;stroke-linecap:round;stroke-linejoin:round}
+.start-const circle{fill:#fff;filter:drop-shadow(0 0 8px #ffb8e6) drop-shadow(0 0 3px #fff);animation:start-twinkle 2.6s ease-in-out infinite alternate}
+.start-spark{width:var(--s);height:var(--s);background:var(--c);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 6px var(--c)) drop-shadow(0 0 2px #fff);animation:start-twinkle var(--d) ease-in-out infinite alternate;animation-delay:var(--dl)}
+@keyframes start-buddy-glow{from{opacity:.78}to{opacity:1}}
+@keyframes start-twinkle{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.15)}}
+@media(prefers-reduced-motion:reduce){body[data-stage=start] .mystery-buddy,.start-const circle,.start-spark{animation:none}}
