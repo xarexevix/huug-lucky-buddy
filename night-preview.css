@@ -63,3 +63,7 @@ body[data-stage=start] .start-const,body[data-stage=start] .start-spark{display:
 /* Constellation stars only twinkle in place: SVG scale moved the circles around the viewBox origin (Claude 17:05). */
 .start-const circle{animation-name:start-glint}
 @keyframes start-glint{from{opacity:.35}to{opacity:1}}
+/* Calmer start screen (Claude 17:15, confirmed mockup) : no boxed nebula edge, white rim on buddies, lines-only constellations, no sparkles. */
+body[data-stage=start] #tarot-experience{background:none}
+body[data-stage=start] .mystery-buddy{filter:brightness(0) drop-shadow(0 0 1px #fff) drop-shadow(0 0 4px #ffffff55);animation:none}
+.start-spark,.start-const circle{display:none!important}
