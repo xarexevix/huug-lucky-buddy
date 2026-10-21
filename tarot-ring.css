@@ -1,0 +1,33 @@
+body{background:radial-gradient(ellipse at 50% 25%,#e5ecfb,#f3ecf4 58%,#f6f0e7);min-height:100vh}
+body[data-stage=start]>header,body[data-stage=start]>main,body[data-stage=browse]>header,body[data-stage=browse]>main{display:none}
+#tarot-experience{max-width:920px;margin:auto;padding:22px 14px 40px;text-align:center}
+body[data-stage=result] #tarot-experience{display:none}
+#tarot-experience .brand{font-size:13px;letter-spacing:3px;margin:0 0 20px}
+#tarot-experience h1{font:clamp(25px,5vw,36px) Maru;line-height:1.5;margin-bottom:8px}
+#tarot-experience .subtitle{font-size:14px;color:#67728c;margin:4px 0}
+.orbit-stage{position:relative;width:100%;max-width:660px;height:600px;margin:0 auto}
+.orbit-line{position:absolute;left:50%;top:50%;width:410px;height:410px;border:1px solid #b5bbcf77;border-radius:50%;transform:translate(-50%,-50%)}
+.earth{position:absolute;left:50%;top:50%;width:170px;height:170px;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;background:#87b1da;box-shadow:0 0 0 8px #fff4,0 0 50px #adc9f5;isolation:isolate}
+.earth-art{position:absolute;inset:-14px;font:180px/198px sans-serif;filter:saturate(.6)}
+.earth-shadow{position:absolute;inset:0;background:linear-gradient(105deg,transparent 25%,#17213c40 45%,#11182be8 78%)}
+.earth-labels{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-around;color:#fff;font-size:12px;text-shadow:0 1px 5px #182139}
+.earth-time{position:absolute;top:calc(50% + 104px);left:0;right:0;font-size:12px;color:#64708b}
+.celestial{position:absolute;z-index:3;pointer-events:none;text-align:center;font-size:12px;line-height:1.8}
+.sun{left:7%;top:8%;color:#89662e}.sun-orb{display:block;width:44px;height:44px;background:radial-gradient(circle,#fff7d1,#f2c475);border-radius:50%;box-shadow:0 0 30px #edc78399;margin:auto}
+.moon{right:8%;bottom:8%;color:#687190}.moon-orb{display:block;width:30px;height:30px;border-radius:50%;background:#e0e5f4;box-shadow:inset -10px -3px 0 #98a3c4,0 0 20px #b3bde3;margin:auto}
+.orbit-card{position:absolute;left:50%;top:50%;width:74px;height:111px;padding:0;border:0;background:transparent;border-radius:13px;transform:translate(-50%,-50%) translate(var(--x),var(--y)) rotate(var(--r));transition:transform .6s,filter .3s;filter:drop-shadow(0 6px 7px #33405a30)}
+.orbit-card canvas{width:100%;height:100%;display:block;border-radius:13px}.orbit-card[aria-pressed=true]{outline:3px solid #a08ab9;outline-offset:4px}.orbit-card:focus-visible{outline:3px solid #4e6689;outline-offset:4px}.orbit-card:hover{filter:drop-shadow(0 9px 10px #33405a60)}
+.ring-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.ring-actions button,.ring-actions a{padding:13px 23px;border-radius:30px;border:1px solid #bcc1d2;background:#ffffffa8;text-decoration:none;font:14px Pretendard;color:#33415a}.ring-actions .primary{background:#3d4764;color:#fff;border-color:#3d4764}
+.ring-detail{max-width:420px;margin:20px auto}.ring-detail canvas{width:100%;height:auto;display:block}.ring-detail h2{margin:14px 0 6px}.ring-detail p{font-size:14px}.ring-detail[hidden],.product-list[hidden]{display:none}
+.sign-list{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;max-width:650px;margin:0 auto 22px}.sign-list button{font-size:12px;padding:8px 12px;min-height:44px;border-radius:22px;background:#fff8}.sign-list button[aria-pressed=true]{background:#3d4764;color:white}
+.product-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px auto;max-width:760px}.product-item{padding:14px;background:#fff8;border-radius:20px}.product-item img{width:100%;aspect-ratio:1;object-fit:contain}.product-item h3{font:18px Maru}.product-item a{display:block;font-size:13px;padding:9px;min-height:44px}
+#result-explore{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px auto}#result-explore button{border-radius:28px;background:#3d4764;color:white}
+body[data-stage=result]>header>h1,body[data-stage=result]>header>p:first-of-type{display:none}
+body[data-stage=result] .tools{display:none}body[data-stage=result] #status{display:none}
+.preview-tools{display:block;text-align:center;font-size:12px;margin:20px auto;color:#69758c}
+@media(max-width:600px){.orbit-stage{height:410px}.orbit-line{width:270px;height:270px}.orbit-card{width:48px;height:72px}.earth{width:112px;height:112px}.earth-art{font-size:122px;line-height:140px}.earth-time{top:calc(50% + 72px);font-size:11px}.sun{left:4%;top:3%}.sun-orb{width:32px;height:32px}.moon{right:5%;bottom:3%}.moon-orb{width:23px;height:23px}.product-list{grid-template-columns:repeat(2,minmax(0,1fr))}#tarot-experience{padding:18px 10px 35px}}
+@media(prefers-reduced-motion:reduce){.orbit-card{transition:none}}
+
+.sign-list[hidden]{display:none}
+
+.review-settings{margin:28px auto;max-width:850px}.review-settings summary{cursor:pointer;padding:16px;text-align:center}.review-settings .tools{display:flex!important}.is-revealing .orbit-card canvas{animation:ring-reveal .7s both;animation-delay:var(--delay)}@keyframes ring-reveal{from{transform:rotateY(90deg);opacity:.4}to{transform:rotateY(0);opacity:1}}@media(prefers-reduced-motion:reduce){.is-revealing .orbit-card canvas{animation:none}}

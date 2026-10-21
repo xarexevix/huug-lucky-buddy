@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10172f"><title>너의 작은 행운을 찾아서 · huug</title><link rel="stylesheet" href="survey-night.css?v=c1606"><script>/*huug-track*/(function(){var B='https://abacus.jasoncameron.dev/hit/huug-lucky-buddy/';
+function hit(k){try{fetch(B+k,{mode:'no-cors',keepalive:true})}catch(e){}}
+function isResult(){return location.hash.indexOf('#result=')===0}
+if(/survey-night\.html$/.test(location.pathname))hit('quiz_start');else hit(isResult()?'result_view':'visit');
+addEventListener('hashchange',function(){if(isResult())hit('result_view')});
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('#save,#night-share,a[href]');if(!t)return;
+if(t.id==='save')hit('save_image');else if(t.id==='night-share')hit('share_link');
+else if(/^https?:/.test(t.href)&&t.host!==location.host)hit(/gift\.kakao/.test(t.href)?'gift_click':'shop_click');},true);})();</script></head>
+<body><div class="starfield" aria-hidden="true"></div><header><a class="brand" href="./" aria-label="휴그 시작 화면">huug · buddies</a><span>너의 작은 행운을 찾아서</span></header><main id="survey"><p class="loading" role="status">별빛을 따라가는 중…</p></main><p id="survey-error" role="alert"></p><script type="module" src="survey-night.mjs?v=c1606"></script></body></html>

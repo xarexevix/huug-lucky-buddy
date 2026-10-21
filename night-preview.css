@@ -1,0 +1,47 @@
+body{background:radial-gradient(ellipse at 50% 43%,#363663 0,#1a2344 38%,#0d132b 78%);color:#eee8ff;min-height:100vh}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,#e6eaff99 1px,transparent 1.5px),radial-gradient(circle,#e6eaff44 1px,transparent 1.6px);background-size:97px 113px,163px 179px;background-position:23px 11px,61px 79px;opacity:.5}
+#tarot-experience{position:relative;padding-top:34px;max-width:900px}#tarot-experience .brand{color:#bcb5d9;font-size:11px;letter-spacing:5px;margin-bottom:22px}#tarot-experience h1{font-size:clamp(29px,5vw,42px);line-height:1.55;letter-spacing:-1px;color:#f4ebff;text-shadow:0 0 35px #c3aeff44}#tarot-experience .subtitle{color:#b8b6cf;line-height:1.9}
+.orbit-stage{transform:rotate(var(--spin,0deg));touch-action:pan-y;cursor:grab;user-select:none;height:590px;isolation:isolate}.orbit-stage.dragging{cursor:grabbing}.orbit-stage:focus-visible{outline:1px solid #c4b2ed;outline-offset:-12px;border-radius:50%}.orbit-card{transition:none}.orbit-card:disabled{opacity:1;cursor:inherit}.orbit-card canvas{filter:brightness(.72) saturate(.65)}
+.earth{box-shadow:0 0 0 1px #b9caed77,0 0 0 7px #acb9e112,0 0 60px #9c8cd944;background:#51698e}.earth-art{filter:saturate(.35) brightness(.75)}.earth-time{display:none}.earth-labels{color:#e7eaff;opacity:.8}.sun{color:#ead7a9}.sun-orb{width:33px;height:33px;box-shadow:0 0 30px #f5ce7a66}.moon{color:#d4d8f1}.moon-orb{box-shadow:inset -10px -3px 0 #626d95,0 0 27px #c5cbea66}
+.orbit-line{border-color:#c2b8dd55}.astro-orbit{position:absolute;left:50%;top:50%;border:1px solid #c2b8dd44;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:-1}.astro-outer{width:540px;height:540px;background:repeating-conic-gradient(from 0deg,#c3b9de88 0deg .25deg,transparent .25deg 5deg);mask:radial-gradient(transparent 68%,#000 68%,#000 69%,transparent 69%)}.astro-inner{width:310px;height:310px;border-style:dashed;opacity:.5}.astro-ellipse{width:560px;height:210px;transform:translate(-50%,-50%) rotate(-28deg);border-color:#c2b8dd66}
+.mystery-buddy{position:absolute;left:12%;top:30%;width:76%;height:49%;object-fit:contain;filter:brightness(0) drop-shadow(0 0 3px #c6b7e6);opacity:.7;pointer-events:none}.mystery-mark{position:absolute;inset:38% 0 auto;font:30px Georgia,serif;color:#f1e5ff;text-shadow:0 0 9px #b38dd3;pointer-events:none}
+.drag-hint{color:#aaa8c4;font-size:12px;margin:-8px 0 24px;letter-spacing:1px}.ring-actions .primary{min-width:240px;padding:17px 30px;background:linear-gradient(115deg,#ddd1f2,#b6c9e9);color:#29304f;border:1px solid #ede3ff;box-shadow:0 0 34px #a994d533;font-weight:600}.time-hint{font-size:11px;color:#9695b1;margin-top:15px}.ring-detail,.product-list{color:#eee8ff}.product-item{background:#ffffff0a}.sign-list button{color:#ede9f8;background:#ffffff0d;border-color:#81779d}.ring-actions button{background:#ffffff0d;color:#ede9f8;border-color:#81779d}
+@media(max-width:600px){.orbit-stage{height:410px}.astro-outer{width:340px;height:340px}.astro-inner{width:190px;height:190px}.astro-ellipse{width:345px;height:145px}.mystery-mark{font-size:23px}.sun-orb{width:26px;height:26px}#tarot-experience{padding-top:25px}.drag-hint{margin-top:5px}.earth{width:100px;height:100px}.earth-art{font-size:112px;line-height:128px}}
+
+#tarot-experience{overflow:hidden}.sun{left:calc(50% - 197px);top:calc(50% - 197px)}.moon{right:auto;bottom:auto;left:calc(50% + 170px);top:calc(50% + 170px)}@media(max-width:600px){.sun{left:calc(50% - 132px);top:calc(50% - 132px)}.moon{left:calc(50% + 108px);top:calc(50% + 108px)}}
+#tarot-experience .sun{left:calc(50% - 198px);top:calc(50% - 198px);transform:translate(-50%,-50%)}
+#tarot-experience .moon{left:calc(50% + 198px);top:calc(50% + 198px);transform:translate(-50%,-50%)}
+#tarot-experience .sun-orb{position:relative;width:44px;height:44px;background:none;box-shadow:0 0 8px #ffcc6299,0 0 24px #eea25366,0 0 45px #c36d3626}
+#tarot-experience .sun-orb:before{content:'';position:absolute;inset:-7px;border:1px solid #e9b76c44;border-radius:50%;box-shadow:0 0 12px #f6c26933}
+#tarot-experience .moon-orb{width:39px;height:39px;background:none;box-shadow:0 0 22px #c9c0f333}
+.sun-surface,.moon-surface{display:block;width:100%;height:100%;border-radius:50%}
+.magic-stars{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.magic-star{position:absolute;width:var(--size);height:var(--size);background:#e6d9ff;border-radius:50%;box-shadow:0 0 7px #cfc0ff;animation:star-glimmer var(--duration) ease-in-out infinite;animation-delay:var(--delay)}
+.shooting-star{position:absolute;width:100px;height:1px;background:linear-gradient(90deg,transparent,#e4d5ff);opacity:0;transform:rotate(140deg);animation:meteor-pass 16s linear infinite;box-shadow:0 0 5px #e6dfff}
+@keyframes star-glimmer{0%,100%{opacity:.18;transform:scale(.65)}50%{opacity:.9;transform:scale(1.15)}}
+@keyframes meteor-pass{0%,86%,100%{opacity:0;transform:translate(0,0) rotate(140deg)}87%{opacity:.8}93%{opacity:0;transform:translate(-240px,200px) rotate(140deg)}}
+.magic-stars.paused *{animation-play-state:paused}
+@media(max-width:600px){#tarot-experience .sun{left:calc(50% - 118px);top:calc(50% - 118px)}#tarot-experience .moon{left:calc(50% + 118px);top:calc(50% + 118px)}#tarot-experience .sun-orb{width:32px;height:32px}#tarot-experience .moon-orb{width:30px;height:30px}.orbit-card{width:43px;height:65px}.orbit-line{width:210px;height:210px}.astro-inner{width:160px;height:160px}}
+@media(prefers-reduced-motion:reduce){.magic-star{animation:none;opacity:.45}.shooting-star{display:none}}
+.earth-labels{display:none}
+#tarot-experience .sun-orb{box-shadow:0 0 9px #fff3d777,0 0 26px #eadbc344,0 0 45px #ded6ec22}
+#tarot-experience .sun-orb:before{border-color:#efe5d533;box-shadow:0 0 12px #f8eee533}
+#tarot-experience .moon-orb{width:30px;height:30px;box-shadow:0 0 18px #e8e8ff33}
+.sparkle-star{background:transparent!important;box-shadow:none!important;width:8px!important;height:8px!important;animation-name:star-sparkle!important}
+.sparkle-star:before,.sparkle-star:after{content:'';position:absolute;left:50%;top:50%;background:linear-gradient(transparent,#f7eeff,transparent);transform:translate(-50%,-50%);width:1px;height:10px;filter:drop-shadow(0 0 3px #e4d2ff)}
+.sparkle-star:after{transform:translate(-50%,-50%) rotate(90deg);height:7px}
+@keyframes star-sparkle{0%,100%{opacity:.12;transform:scale(.5)}40%{opacity:.35}55%{opacity:1;transform:scale(1.35)}70%{opacity:.4;transform:scale(.8)}}
+.night-clouds{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.cloud-bank{position:absolute;width:620px;height:210px;filter:blur(25px);opacity:.13;background:radial-gradient(ellipse at 20% 65%,#b5b4d0 0%,transparent 45%),radial-gradient(ellipse at 43% 45%,#bab8da 0%,transparent 44%),radial-gradient(ellipse at 65% 65%,#aeb6cb 0%,transparent 48%),radial-gradient(ellipse at 85% 70%,#adb4cc 0%,transparent 40%);animation:cloud-wander 35s ease-in-out infinite alternate}
+.cloud-left{left:-300px;top:22%;transform:rotate(-12deg)}.cloud-right{right:-300px;top:57%;opacity:.11;animation-delay:-18s}.cloud-bottom{left:10%;bottom:-120px;width:90%;opacity:.16;animation-duration:46s}
+@keyframes cloud-wander{from{translate:-25px 0}to{translate:45px -10px}}
+@media(max-width:600px){#tarot-experience .moon-orb{width:23px;height:23px}.cloud-bank{width:450px;opacity:.1}.cloud-left{left:-310px}.cloud-right{right:-300px}.cloud-bottom{width:130%;left:-15%;opacity:.14}}
+@media(prefers-reduced-motion:reduce){.cloud-bank,.sparkle-star{animation:none!important}}
+
+#tarot-experience .sun-orb{box-shadow:0 0 9px #fff3d777,0 0 26px #eadbc344,0 0 45px #ded6ec22}#tarot-experience .sun-orb:before{border-color:#efe5d533;box-shadow:0 0 12px #f8eee533}#tarot-experience .moon-orb{width:30px;height:30px;box-shadow:0 0 18px #e8e8ff33}@media(max-width:600px){#tarot-experience .moon-orb{width:23px;height:23px}}
+
+.earth-sphere{display:block;width:100%;height:100%;border-radius:50%}.earth{background:#182442!important;box-shadow:0 0 0 1px #bacfee66,0 0 10px #91b8df55,0 0 35px #9d94d333!important}#tarot-experience .sun{left:calc(50% - 220px);top:calc(50% - 220px)}#tarot-experience .sun-orb:before{display:none}.cloud-bank{filter:blur(15px);opacity:.34}.cloud-left{left:-200px;top:19%}.cloud-right{right:-190px;top:63%;opacity:.28}.cloud-bottom{bottom:-65px;opacity:.3}@media(max-width:600px){#tarot-experience .sun{left:calc(50% - 128px);top:calc(50% - 150px)}.cloud-bank{opacity:.27;filter:blur(12px)}.cloud-left{left:-220px;top:21%}.cloud-right{right:-230px;top:63%;opacity:.25}.cloud-bottom{bottom:-80px;opacity:.3}}
+
+/* Reserve a full orbit so rotating bodies clear the heading and CTA. */
+.orbit-stage{height:700px}@media(max-width:600px){.orbit-stage{height:450px}#tarot-experience .sun{left:calc(50% - 117px);top:calc(50% - 117px)}}
+
+body[data-stage=browse] .mystery-buddy,body[data-stage=browse] .mystery-mark{display:none}body[data-stage=result] #flip-hint{color:#c8c4de}body[data-stage=result] .review-settings[hidden]{display:none}

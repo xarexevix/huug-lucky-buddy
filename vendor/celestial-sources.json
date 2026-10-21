@@ -1,0 +1,26 @@
+{
+  "moonTexture": {
+    "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_poles_1k.jpg",
+    "page": "https://svs.gsfc.nasa.gov/4720/",
+    "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio; LRO camera and laser altimeter teams; Ernie Wright",
+    "use": "orthographic near-side projection with computed phase shading"
+  },
+  "ephemeris": {
+    "name": "Astronomy Engine",
+    "version": "2.1.19",
+    "license": "MIT, retained in astronomy.browser.min.js",
+    "source": "https://github.com/cosinekitty/astronomy",
+    "methods": [
+      "MoonPhase",
+      "Illumination"
+    ]
+  },
+  "sun": "soft ivory radial-gradient illustration and glow; previous granular texture removed; not a live solar observation",
+  "refresh": "actual current instant on load, each visible minute, and foreground resume",
+  "earth": {
+    "source": "https://maps.jpl.nasa.gov/tmaps/earth.html",
+    "file": "https://maps.jpl.nasa.gov/tmaps/pix/ear0xuu2.jpg",
+    "credit": "Caltech/JPL/USGS",
+    "use": "land/ocean palette simplification; sphere projection; slow rotation, no photo texture shown"
+  }
+}
